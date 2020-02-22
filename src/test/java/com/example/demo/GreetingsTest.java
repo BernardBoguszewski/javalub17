@@ -33,4 +33,18 @@ class GreetingsTest {
         assertEquals("Witaj, mój przyjacielu", result);
 
     }
+
+    @Test
+    void testShouldReturnGreetingForBig() {
+        //given
+        String name = "ADAM";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("WITAJ " + name, result);
+
+    }
 }
