@@ -23,4 +23,14 @@ public class Greetings {
             return "Witaj, mój przyjacielu";
         }
     }
+
+    public String greetThree(String name) {
+        name = "Adam,Iza,Robert";
+        if (name.contains(",")) {
+            String[] stringTab = name.split(",");
+            return stringTab[0] + ", " + stringTab[1] + " i " + stringTab[2] + " witajcie!";
+        } else {
+            return "Witaj, mój przyjacielu";
+        }
+    }
 }
