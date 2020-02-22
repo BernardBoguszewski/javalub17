@@ -18,17 +18,31 @@ class GreetingsTest {
         //then
         assertEquals("Witaj, Adam", result);
     }
-        @Test
-        void testShouldReturnDifferenGreetingtWhenNameIsNull() {
-            //given
-            String name = null;
-            Greetings greetings = new Greetings();
 
-            //when
-            String result = greetings.greet(name);
+    @Test
+    void testShouldReturnDifferentGreetingtWhenNameIsNull() {
+        //given
+        String name = null;
+        Greetings greetings = new Greetings();
 
-            //then
-            assertEquals("Witaj, mój przyjacielu", result);
-        }
+        //when
+        String result = greetings.greet(name);
 
+        //then
+        assertEquals("Witaj, mój przyjacielu", result);
     }
+
+    @Test
+    void testShouldReturnUpperCaseGreetingWhenNameIsUpperCase() {
+        //given
+        String name = "ADAM";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("WITAJ ADAM", result);
+    }
+
+}
