@@ -20,4 +20,17 @@ class GreetingsTest {
 
 
     }
+    @Test
+    void testShouldReturnGreetingNotNull() {
+
+        //given
+        String name = null ;
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("ble ble", result);
+    }
 }
