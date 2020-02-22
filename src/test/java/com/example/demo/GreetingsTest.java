@@ -2,7 +2,7 @@ package com.example.demo;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class GreetingsTest {
 
@@ -31,6 +31,20 @@ class GreetingsTest {
 
         //then
         assertEquals("Witaj, mój przyjacielu", result);
+
+    }
+
+    @Test
+    void testShouldReturnGreetingWithBigCharsInName() {
+        //given
+        String name = "ADAM";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("WITAJ, ADAM", result);
 
     }
 
