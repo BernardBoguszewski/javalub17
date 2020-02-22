@@ -31,6 +31,44 @@ class GreetingsTest {
         String result = greetings.greet(name);
 
         //then
-        assertEquals("ble ble", result);
+        assertEquals("Witaj mój przyjacielu", result);
     }
-}
+
+    @Test
+    void testShouldReturnGreetingsBigLetters() {
+
+        //given
+        String name = "ADAM" ;
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greetUpper(name);
+
+        //then
+        assertEquals("WITAJ ADAM!", result);
+    }
+
+    @Test
+    void testShouldReturnTwoNames(){
+        //given
+        String name = "Adam,Iza";
+        Greetings greetings = new Greetings();
+        //when
+        String result = greetings.greetTwo(name);
+        //then
+        assertEquals("Adam i Iza, witajcie!", result);
+    }
+
+    @Test
+    void testShouldReturnTreeNames() {
+
+        String name = "Adam,Iza i Robert";
+        Greetings greetings = new Greetings();
+        //when
+        String result = greetings.greetThree(name);
+        //then
+        assertEquals("Adam,Iza i Robert, witajcie!", result);
+
+    }
+
+    }
