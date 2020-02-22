@@ -18,6 +18,21 @@ class GreetingsTest {
         //then
         assertEquals("Witaj, Adam", result);
 
+    }
+
+    @Test
+    void testShouldReturnGreetingWithoutName() {
+        //given
+        String name = null;
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Witaj, mój przyjacielu", result);
 
     }
+
+
 }
