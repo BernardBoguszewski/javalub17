@@ -11,7 +11,11 @@ public class Greetings {
             } else {
                 if (name.contains(",")) {
                     String[] names = name.split(",");
-                    greeting = names[0] + " i " + names[1] + ", witajcie!";
+                    if (names.length == 2) {
+                        greeting = names[0] + " i " + names[1] + ", witajcie!";
+                    } else {
+                        greeting = names[0] + ", " + names[1] + " i " + names[2] + ", witajcie!";
+                    }
                 } else {
                     greeting = "Witaj, " + name;
                 }

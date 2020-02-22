@@ -59,4 +59,18 @@ class GreetingsTest {
 
     }
 
+    @Test
+    void testShouldReturnGreetingForThreeNames() {
+        // given
+        String name = "Adam,Iza,Robert";
+        Greetings greetings = new Greetings();
+
+        // when
+        String result = greetings.greet(name);
+
+        // then
+        assertEquals("Adam, Iza i Robert, witajcie!", result);
+
+    }
+
 }
