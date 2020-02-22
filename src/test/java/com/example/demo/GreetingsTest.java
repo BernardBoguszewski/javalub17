@@ -17,11 +17,10 @@ class GreetingsTest {
 
         //then
         assertEquals("Witaj, Adam", result);
-
     }
 
     @Test
-    void testShouldReturnGreetingForNull(){
+    void testShouldReturnGreetingForNull() {
         //given
         String name = null;
         Greetings greetings = new Greetings();
@@ -32,4 +31,31 @@ class GreetingsTest {
         //then
         assertEquals("Witaj, mój przyjacielu", result);
     }
+
+    @Test
+    void testShouldReturnGreetingForUpperCase() {
+        //given
+        String name = "ADAM";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("WITAJ, ADAM!", result);
+    }
+
+    @Test
+    void testShouldReturnGreetingForTwoNames(){
+        //given
+        String name = "Adam,Iza";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Adam i Iza, witajcie!", result);
+    }
+
 }
