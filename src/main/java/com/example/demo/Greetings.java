@@ -8,4 +8,9 @@ public class Greetings {
         } else
             return "Witaj, mój przyjacielu";
     }
+
+    public String greetUpper(String name) {
+        String nameUpper = name.toUpperCase();
+        return "WITAJ " + nameUpper +"!";
+    }
 }
