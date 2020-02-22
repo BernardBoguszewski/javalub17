@@ -14,7 +14,11 @@ public class Greetings {
                     if (names.length == 2) {
                         greeting = names[0] + " i " + names[1] + ", witajcie!";
                     } else {
-                        greeting = names[0] + ", " + names[1] + " i " + names[2] + ", witajcie!";
+                        if (names[2].toUpperCase().equals(names[2])) {
+                            greeting = names[0] + " i " + names[1] + ", witajcie!" + " WITAJ " + names[2] + "!";
+                        } else {
+                            greeting = names[0] + ", " + names[1] + " i " + names[2] + ", witajcie!";
+                        }
                     }
                 } else {
                     greeting = "Witaj, " + name;
