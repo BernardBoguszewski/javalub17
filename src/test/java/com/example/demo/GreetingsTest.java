@@ -45,4 +45,17 @@ class GreetingsTest {
         assertEquals("WITAJ ADAM", result);
     }
 
+    @Test
+    void testShouldDivideNamesWhenTwoNamesGivenWithComa() {
+
+        //given
+        String name = "Adam,Iza";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Adam i Iza, witajcie!", result);
+    }
 }

@@ -9,6 +9,9 @@ public class Greetings {
         if (name == name.toUpperCase()) {
             return "WITAJ " + name;
         }
+        if ( name.contains(",")) {
+          return name.replace(",", " i ") + ", witajcie!";
+        }
         else {
             return "Witaj, " + name;
         }
