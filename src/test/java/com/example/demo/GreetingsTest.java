@@ -48,5 +48,33 @@ class GreetingsTest {
 
     }
 
+    @Test
+    void testShouldReturnGreetingforTwoNames() {
+        //given
+        String name = "Adam,Maciek";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Adam i Maciek, witajcie!", result);
+
+    }
+
+    @Test
+    void testShouldReturnGreetingforMoreThanTwoNames() {
+        //given
+        String name = "Adam,Maciek,Witek";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Witek, Adam i Maciek, witajcie!", result);
+
+    }
+
 
 }
