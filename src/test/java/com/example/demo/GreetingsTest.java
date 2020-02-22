@@ -19,7 +19,7 @@ class GreetingsTest {
         assertEquals("Witaj, Adam", result);
     }
         @Test
-        void testGreetingWhenNameIsNull() {
+        void testShouldReturnDifferengreetingtWhenNameIsNull() {
             //given
             String name = null;
             Greetings greetings = new Greetings();
