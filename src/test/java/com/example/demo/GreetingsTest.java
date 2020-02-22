@@ -23,7 +23,7 @@ class GreetingsTest {
     @Test
     void testShouldReturnGreetingForNull() {
         //given
-        String name="";
+        String name=null;
         Greetings greetings = new Greetings();
 
         //when
