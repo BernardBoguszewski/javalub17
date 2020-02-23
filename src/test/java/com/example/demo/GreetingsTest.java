@@ -53,7 +53,7 @@ class GreetingsTest {
     @Test
     void testShouldReturnGreetingForTwoNames() {
         //given
-        String name = "Adam,Grażynka";
+        String name = "Adam, Grażynka";
         Greetings greetings = new Greetings();
 
         //when
@@ -67,7 +67,7 @@ class GreetingsTest {
     @Test
     void testShouldReturnGreetingForThreeNames() {
         //given
-        String name = "Adam,Grażynka,Juve";
+        String name = "Adam,    Grażynka,     Juve";
         Greetings greetings = new Greetings();
 
         //when
