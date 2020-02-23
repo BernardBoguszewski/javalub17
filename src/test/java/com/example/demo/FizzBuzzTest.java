@@ -20,7 +20,7 @@ class FizzBuzzTest {
     }
 
     @Test
-    void fizzBuzzFor3() {
+    void fizzBuzzForModulo3() {
         //given
         Integer number = 12;
         FizzBuzz fizzBuzz = new FizzBuzz();
@@ -32,7 +32,7 @@ class FizzBuzzTest {
         assertEquals("Fizz", result);
     }
     @Test
-    void fizzBuzzFor5() {
+    void fizzBuzzForModulo5() {
         //given
         Integer number = 20;
         FizzBuzz fizzBuzz = new FizzBuzz();
@@ -55,5 +55,40 @@ class FizzBuzzTest {
         //then
         assertEquals("FizzBuzz", result);
     }
+    @Test
+    void fizzBuzzfor3() {
+        //given
+        Integer number = 3;
+        FizzBuzz fizzBuzz = new FizzBuzz();
 
+        //when
+        String result = fizzBuzz.FizzBuzz(number);
+
+        //then
+        assertEquals("FizzWhizz", result);
+    }
+    @Test
+    void fizzBuzzfor5() {
+        //given
+        Integer number = 5;
+        FizzBuzz fizzBuzz = new FizzBuzz();
+
+        //when
+        String result = fizzBuzz.FizzBuzz(number);
+
+        //then
+        assertEquals("BuzzWhizz", result);
+    }
+    @Test
+    void fizzBuzzforPrimeNumber() {
+        //given
+        Integer number = 7;
+        FizzBuzz fizzBuzz = new FizzBuzz();
+
+        //when
+        String result = fizzBuzz.FizzBuzz(number);
+
+        //then
+        assertEquals("Whizz", result);
+    }
 }
