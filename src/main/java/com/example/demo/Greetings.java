@@ -31,9 +31,15 @@ public class Greetings {
 
     public String greet(String name) {
 
+
         if (name == null) {
             name = "mój przyjacielu";
             return "Witaj, " + name;
+        }
+        
+        for (Character letter : name.toCharArray()) {
+            if (Character.isDigit(letter)) return "Z liczbami się nie witam.";
+
         }
 
         if (isWordInCapitalLetters(name)) return "WITAJ, " + name;

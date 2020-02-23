@@ -84,5 +84,21 @@ class GreetingsTest {
         //then
         assertEquals("Adam i Szatan, witajcie! WITAJ EWA!", result);
     }
+
+    @Test
+    void testShouldReturnGreetingWhenNumeric() {
+
+
+        //given
+        String name = "Adam,EWA,666";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Z liczbami się nie witam.", result);
+    }
+
 }
 
