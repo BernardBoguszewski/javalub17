@@ -20,4 +20,43 @@ class GreetingsTest {
 
 
     }
+
+    @Test
+    void testShouldReturnGreetingForNull() {
+        //given
+        String name = null;
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Witaj, mój przyjacielu", result);
+    }
+
+    @Test
+    void testShouldReturnGreetingForCapitalisedName() {
+        //given
+        String name = "ADAM";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("WITAJ, ADAM", result);
+    }
+
+    @Test
+    void testShouldReturnGreetingForMultipleNames() {
+        //given
+        String name = "Adam,Iza";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Adam i Iza, witajcie!", result);
+    }
 }
