@@ -70,4 +70,17 @@ class GreetingsTest {
         //then
         assertEquals("Adam, Iza i Robert, witajcie!", result);
     }
+
+    @Test
+    void testShouldReturnGreetingForThirdNameUpperCase(){
+        //given
+        String name = "Adam,Iza,ROBERT";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Adam i Iza, witajcie! WITAJ ROBERT!", result);
+    }
 }
