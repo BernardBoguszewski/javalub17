@@ -20,7 +20,11 @@ public class Greetings {
 
         if (name.contains(",")) {
             String[] namesList = name.split(",");
-            return namesList[0] + " i" + namesList[1] + ", witajcie!";
+            if (namesList.length == 2) {
+                return namesList[0] + " i" + namesList[1] + ", witajcie!";
+            } else if (namesList.length == 3) {
+                return namesList[0] + "," + namesList[1] + " i" + namesList[2] + ", witajcie!";
+            }
         }
 
         return "Witaj, " + name;
