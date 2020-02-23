@@ -99,4 +99,15 @@ class GreetingsTest {
         //then
         assertEquals("Iza i Robert, witajcie! WITAJ ADAM!", result);
     }
+
+    @Test
+    void testShouldNoGreetingWhenNameContainNumber(){
+        //giver
+        String name = "Adam,2,Robert";
+        Greetings greetings = new Greetings();
+        //when
+        String result = greetings.greet(name);
+        //then
+        assertEquals("Z liczbami się nie witam!", result);
+    }
 }

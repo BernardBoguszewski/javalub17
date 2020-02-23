@@ -3,6 +3,13 @@ package com.example.demo;
 public class Greetings {
 
     public String greet(String name) {
+        char[] chars = name.toCharArray();
+        for (char c : chars) {
+            if (Character.isDigit(c)) {
+                return "Z liczbami się nie witam!";
+            }
+        }
+
         if (name.contains(",")) {
             String[] array = name.split(",");
             if (array[2].equals(array[2].toUpperCase())) {
@@ -37,3 +44,4 @@ public class Greetings {
         }
     }
 }
+
