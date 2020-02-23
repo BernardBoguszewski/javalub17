@@ -2,7 +2,7 @@ package com.example.demo;
 
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.*;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class GreetingsTest {
 
@@ -83,6 +83,19 @@ class GreetingsTest {
         // then
         assertEquals("Adam i Iza, witajcie! WITAJ ROBERT!", result);
 
+    }
+
+    @Test
+    void testShouldReturnMessegeForNamAsNumber() {
+        // given
+        String name = "Abc123";
+        Greetings greetings = new Greetings();
+
+        // when
+        String result = greetings.greet(name);
+
+        // then
+        assertEquals("Z liczbami się nie witam.", result);
     }
 
 }
