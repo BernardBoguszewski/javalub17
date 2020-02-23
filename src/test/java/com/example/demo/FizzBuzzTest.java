@@ -18,4 +18,42 @@ class FizzBuzzTest {
         //then
         assertEquals("Nie dla null!", result);
     }
+
+    @Test
+    void fizzBuzzFor3() {
+        //given
+        Integer number = 12;
+        FizzBuzz fizzBuzz = new FizzBuzz();
+
+        //when
+        String result = fizzBuzz.FizzBuzz(number);
+
+        //then
+        assertEquals("Fizz", result);
+    }
+    @Test
+    void fizzBuzzFor5() {
+        //given
+        Integer number = 20;
+        FizzBuzz fizzBuzz = new FizzBuzz();
+
+        //when
+        String result = fizzBuzz.FizzBuzz(number);
+
+        //then
+        assertEquals("Buzz", result);
+    }
+    @Test
+    void fizzBuzzFor3and5() {
+        //given
+        Integer number = 15;
+        FizzBuzz fizzBuzz = new FizzBuzz();
+
+        //when
+        String result = fizzBuzz.FizzBuzz(number);
+
+        //then
+        assertEquals("FizzBuzz", result);
+    }
+
 }
