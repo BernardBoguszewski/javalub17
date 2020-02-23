@@ -17,7 +17,97 @@ class GreetingsTest {
 
         //then
         assertEquals("Witaj, Adam", result);
-
-
     }
+
+    @Test
+    void testShouldReturnGreetingForNull() {
+        //given
+        String name = null;
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Witaj, mój przyjacielu", result);
+    }
+
+    @Test
+    void testShouldReturnGreetingForUpperCase() {
+        //given
+        String name = "ADAM";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("WITAJ, ADAM!", result);
+    }
+
+    @Test
+    void testShouldReturnGreetingForTwoNames(){
+        //given
+        String name = "Adam,Iza";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Adam i Iza, witajcie!", result);
+    }
+
+    @Test
+    void testShouldReturnGreetingForThreeNames(){
+        //given
+        String name = "Adam,Iza,Robert";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Adam, Iza i Robert, witajcie!", result);
+    }
+
+    @Test
+    void testShouldReturnGreetingForThirdNameUpperCase(){
+        //given
+        String name = "Adam,Iza,ROBERT";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Adam i Iza, witajcie! WITAJ ROBERT!", result);
+    }
+
+    @Test
+    void testShouldReturnResponseForNumbers(){
+        //given
+        String name = "123";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Z liczbami się nie witam.", result);
+    }
+
+    @Test
+    void testShouldReturnResponseForNameWithNumber(){
+        //given
+        String name = "Adam1";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Z liczbami się nie witam.", result);
+    }
+
 }
