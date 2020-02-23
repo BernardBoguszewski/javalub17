@@ -20,7 +20,7 @@ class GreetingsTest {
     }
 
     @Test
-    void testShouldReturnWhenNameIsNull(){
+    void testShouldReturnWhenNameIsNull() {
 
         //given
         Greetings greetings = new Greetings();
@@ -31,4 +31,19 @@ class GreetingsTest {
         //then
         assertEquals("Witaj, mój przyjacielu", result);
     }
+
+    @Test
+    void testShouldReturnCapitalLetters() {
+
+        //given
+        String name = "ADAM";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("WITAJ, ADAM", result);
+    }
+
 }
