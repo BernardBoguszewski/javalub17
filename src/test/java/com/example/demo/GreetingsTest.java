@@ -17,7 +17,18 @@ class GreetingsTest {
 
         //then
         assertEquals("Witaj, Adam", result);
+    }
 
+    @Test
+    void testGreetingWhenNameIsNull(){
 
+        //given
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(null);
+
+        //then
+        assertEquals("Witaj, mój przyjacielu.", result);
     }
 }
