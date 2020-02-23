@@ -17,7 +17,88 @@ class GreetingsTest {
 
         //then
         assertEquals("Witaj, Adam", result);
-
-
     }
+
+    @Test
+    void testShouldReturnWhenNameIsNull() {
+
+        //given
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(null);
+
+        //then
+        assertEquals("Witaj, mój przyjacielu", result);
+    }
+
+    @Test
+    void testShouldReturnCapitalLetters() {
+
+        //given
+        String name = "ADAM";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("WITAJ, ADAM", result);
+    }
+
+    @Test
+    void testShouldReturnTwoNames() {
+        //given
+        String name = "Adam,Ewa";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Adam i Ewa, witajcie!", result);
+    }
+
+    @Test
+    void testShouldReturnThreeNames() {
+        //given
+        String name = "Adam,Ewa,Szatan";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Adam, Ewa i Szatan, witajcie!", result);
+    }
+
+    @Test
+    void testShouldReturnThreeNamesWithOneInCapitalLetters() {
+        //given
+        String name = "Adam,EWA,Szatan";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Adam i Szatan, witajcie! WITAJ EWA!", result);
+    }
+
+    @Test
+    void testShouldReturnGreetingWhenNumeric() {
+
+
+        //given
+        String name = "Adam,EWA,666";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Z liczbami się nie witam.", result);
+    }
+
 }
+
