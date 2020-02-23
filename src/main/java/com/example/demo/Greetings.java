@@ -4,8 +4,14 @@ public class Greetings {
 
     public String greet(String name) {
 
+
         if (name==null){
-            return "Witaj, mó przyjacielu";
+            return "Witaj, mój przyjacielu";
+        }
+
+
+        else if (name.equals(name.toUpperCase())){
+            return "WITAJ, "+name;
         }
         return "Witaj, " + name;
     }
