@@ -66,4 +66,37 @@ class GreetingsTest {
         //then
         assertEquals("Adam, Iza i Robert, witajcie!", result);
     }
+
+    @Test
+    void testShouldGreetingThreeNamesWhenNo3Upper() {
+        //given
+        String name = "Adam,Iza,ROBERT";
+        Greetings greetings = new Greetings();
+        //when
+        String result = greetings.greet(name);
+        //then
+        assertEquals("Aam i Iza, witajcie! WITAJ ROBERT!", result);
+    }
+
+    @Test
+    void testShouldGreetingThreeNamesWhenNo2Upper() {
+        //given
+        String name = "Adam,IZA,Robert";
+        Greetings greetings = new Greetings();
+        //when
+        String result = greetings.greet(name);
+        //then
+        assertEquals("Adam i Robert, witajcie! WITAJ IZA!", result);
+    }
+
+    @Test
+    void testShouldGreetingThreeNamesWhenNo1Upper() {
+        //given
+        String name = "ADAM,Iza,Robert";
+        Greetings greetings = new Greetings();
+        //when
+        String result = greetings.greet(name);
+        //then
+        assertEquals("Iza i Robert, witajcie! WITAJ ADAM!", result);
+    }
 }
