@@ -1,13 +1,16 @@
 package com.example.demo;
 
-import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
+import org.junit.Assert;
+import org.junit.Test;
 
-class GreetingsTest {
+import static org.junit.Assert.assertEquals;
+
+
+public class GreetingsTest {
 
     @Test
-    void testShouldReturnGreetingForName() {
+    public void testShouldReturnGreetingForName() {
         //given
         String name = "Adam";
         Greetings greetings = new Greetings();
@@ -21,7 +24,7 @@ class GreetingsTest {
     }
 
     @Test
-    void testShouldReturnGreetingWithoutName() {
+    public void testShouldReturnGreetingWithoutName() {
         //given
         String name = null;
         Greetings greetings = new Greetings();
@@ -35,7 +38,7 @@ class GreetingsTest {
     }
 
     @Test
-    void testShouldReturnGreetingWithBigCharsInName() {
+    public void testShouldReturnGreetingWithBigCharsInName() {
         //given
         String name = "ADAM";
         Greetings greetings = new Greetings();
@@ -49,7 +52,7 @@ class GreetingsTest {
     }
 
     @Test
-    void testShouldReturnGreetingforTwoNames() {
+    public void testShouldReturnGreetingforTwoNames() {
         //given
         String name = "Adam,Maciek";
         Greetings greetings = new Greetings();
@@ -63,7 +66,7 @@ class GreetingsTest {
     }
 
     @Test
-    void testShouldReturnGreetingforMoreThanTwoNames() {
+    public void testShouldReturnGreetingforMoreThanTwoNames() {
         //given
         String name = "Adam,Maciek,Witek";
         Greetings greetings = new Greetings();
@@ -73,6 +76,46 @@ class GreetingsTest {
 
         //then
         assertEquals("Witek, Adam i Maciek, witajcie!", result);
+
+    }
+    @Test
+    public void testShouldReturnGreetingforMoreThanTwoNamesWithWitekToUpperCase() {
+        //given
+        String name = "Adam,Maciek,WITEK";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Adam i Maciek, witajcie! WITAJ, WITEK", result);
+
+    }
+    @Test
+    public void testShouldReturnGreetingforMoreThanTwoNamesWithMaciekToUpperCase() {
+        //given
+        String name = "Adam,MACIEK,Witek";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Adam i Witek, witajcie! WITAJ, MACIEK", result);
+
+    }
+
+    @Test
+    public void testShouldReturnGreetingforMoreThanTwoNamesWithAdamToUpperCase() {
+        //given
+        String name = "ADAM,Maciek,Witek";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Maciek i Witek, witajcie! WITAJ, ADAM", result);
 
     }
 
