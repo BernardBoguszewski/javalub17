@@ -4,6 +4,31 @@ import java.util.ArrayList;
 
 public class Greetings {
 
+    public boolean isWordInCapitalLetters(String word) {
+        for (int i = 0; i < word.length(); i++) {
+            if (!Character.isUpperCase(word.charAt(i))) return false;
+        }
+        return true;
+    }
+
+    public boolean containsWordInCapitalLetters(ArrayList<String> namesList) {
+        for (String name : namesList) {
+            if (isWordInCapitalLetters(name)) return true;
+        }
+        return false;
+    }
+
+    public String returnAndDeleteWordThatIsInCapitalLetters(ArrayList<String> namesList) {
+        for (String name : namesList) {
+            if (isWordInCapitalLetters(name)) {
+                namesList.remove(name);
+                return name;
+            }
+        }
+        return null;
+    }
+
+
     public String greet(String name) {
 
         if (name == null) {
@@ -11,19 +36,26 @@ public class Greetings {
             return "Witaj, " + name;
         }
 
-        for (int i = 0; i < name.length(); i++) {
-            if (!Character.isUpperCase(name.charAt(i))) break;
-            if (i == name.length() - 1) {
-                return "WITAJ, " + name;
-            }
-        }
+        if (isWordInCapitalLetters(name)) return "WITAJ, " + name;
+
 
         if (name.contains(",")) {
-            String[] namesList = name.split(",");
-            if (namesList.length == 2) {
-                return namesList[0] + " i" + namesList[1] + ", witajcie!";
-            } else if (namesList.length == 3) {
-                return namesList[0] + "," + namesList[1] + " i" + namesList[2] + ", witajcie!";
+            String[] namesTable = name.split(",");
+            ArrayList<String> namesList = new ArrayList<>();
+            for (String singleName : namesTable) {
+                namesList.add(singleName);
+            }
+
+            if (namesList.size() == 2) {
+                return namesList.get(0) + " i " + namesList.get(1) + ", witajcie!";
+            } else if (namesList.size() == 3) {
+                if (containsWordInCapitalLetters(namesList)) {
+
+                    String nameInCapitalLetters = returnAndDeleteWordThatIsInCapitalLetters(namesList);
+
+                    return namesList.get(0) + " i " + namesList.get(1) + ", witajcie! WITAJ " + nameInCapitalLetters + "!";
+                }
+                return namesList.get(0) + ", " + namesList.get(1) + " i " + namesList.get(2) + ", witajcie!";
             }
         }
 

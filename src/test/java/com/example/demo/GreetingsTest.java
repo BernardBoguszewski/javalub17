@@ -49,7 +49,7 @@ class GreetingsTest {
     @Test
     void testShouldReturnTwoNames() {
         //given
-        String name = "Adam, Ewa";
+        String name = "Adam,Ewa";
         Greetings greetings = new Greetings();
 
         //when
@@ -60,9 +60,9 @@ class GreetingsTest {
     }
 
     @Test
-    void testShouldReturnhreeNames() {
+    void testShouldReturnThreeNames() {
         //given
-        String name = "Adam, Ewa, Szatan";
+        String name = "Adam,Ewa,Szatan";
         Greetings greetings = new Greetings();
 
         //when
@@ -70,6 +70,19 @@ class GreetingsTest {
 
         //then
         assertEquals("Adam, Ewa i Szatan, witajcie!", result);
+    }
+
+    @Test
+    void testShouldReturnThreeNamesWithOneInCapitalLetters() {
+        //given
+        String name = "Adam,EWA,Szatan";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Adam i Szatan, witajcie! WITAJ EWA!", result);
     }
 }
 
