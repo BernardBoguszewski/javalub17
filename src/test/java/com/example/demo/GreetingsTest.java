@@ -20,11 +20,12 @@ class GreetingsTest {
 
 
     }
+
     @Test
     void testShouldReturnGreetingNotNull() {
 
         //given
-        String name = null ;
+        String name = null;
         Greetings greetings = new Greetings();
 
         //when
@@ -38,7 +39,7 @@ class GreetingsTest {
     void testShouldReturnGreetingsBigLetters() {
 
         //given
-        String name = "ADAM" ;
+        String name = "ADAM";
         Greetings greetings = new Greetings();
 
         //when
@@ -49,7 +50,7 @@ class GreetingsTest {
     }
 
     @Test
-    void testShouldReturnTwoNames(){
+    void testShouldReturnTwoNames() {
         //given
         String name = "Adam,Iza";
         Greetings greetings = new Greetings();
@@ -71,4 +72,25 @@ class GreetingsTest {
 
     }
 
+    @Test
+    void testShouldReturnTreeNamesOneUppercase() {
+
+        String name = "Adam,Iza,ROBERT";
+        Greetings greetings = new Greetings();
+        //when
+        String result = greetings.greetUpperOneName(name);
+        //then
+        assertEquals("Adam i Iza, witajcie! WITAJ ROBERT!", result);
+
     }
+    @Test
+    void testContainsNumbers() {
+        String name = "ab124";
+        Greetings greetings = new Greetings();
+        //when
+        String result = greetings.greetNumber(name);
+        //then
+        assertEquals("Z liczbami się nie witam", result);
+
+    }
+}
