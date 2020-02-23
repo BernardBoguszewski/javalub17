@@ -20,4 +20,62 @@ class GreetingsTest {
 
 
     }
+    @Test
+    void testShouldReturnGreetingWithNull() {
+        //given
+        String name = null;
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Witaj, mój przyjacielu", result);
+
+
+    }
+    @Test
+    void testShouldReturnNameWithBigLetter() {
+        //given
+        String name = "ADAM";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Witaj, Adam", result);
+
+
+    }
+
+
+    @Test
+    void testShouldReturnNameWithDecimal() {
+        //given
+        String name = "Adam, Iza";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Adam i Iza, witajcie!", result);
+    }
+
+    @Test
+    void testShouldReturnThreeNames() {
+        //given
+        String name = "Adam, Iza, Robert";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Adam, Iza i Robert, witajcie!", result);
+    }
+
+
 }
+
