@@ -20,4 +20,90 @@ class GreetingsTest {
 
 
     }
+
+    @Test
+    void testShouldReturnGreetingForNull() {
+        //given
+        String name = null;
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Witaj, mój przyjacielu", result);
+
+
+    }
+
+    @Test
+    void testShouldReturnGreetingForNameUpperCase() {
+        //given
+        String name = "ADAM";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("WITAJ, "+name, result);
+
+    }
+
+    @Test
+    void testShouldReturnGreetingForTwoNames() {
+        //given
+        String name = "Adam, Grażynka";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Adam i Grażynka", result);
+
+    }
+
+    @Test
+    void testShouldReturnGreetingForThreeNames() {
+        //given
+        String name = "Adam,    Grażynka,     Juve";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Adam, Grażynka i Juve", result);
+
+    }
+
+    @Test
+    void testShouldReturnGreetingForThreeNamesAndOneUpperCase() {
+        //given
+        String name = "Adam, Iza, ROBERT";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Adam i Iza, witajcie! WITAJ ROBERT!", result);
+
+    }
+
+
+    @Test
+    void testShouldReturnGreetingForStringWhichContainsDigits() {
+        //given
+        String name = "Adam, Iza, ROBERT23";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Z liczbami sie nie witam", result);
+
+    }
 }
