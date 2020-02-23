@@ -64,7 +64,7 @@ class GreetingsTest {
     }
 
     @Test
-    void testShouldReturnThreNames() {
+    void testShouldReturnThreeNames() {
         //given
         String name = "Adam, Iza, Robert";
         Greetings greetings = new Greetings();
@@ -75,6 +75,7 @@ class GreetingsTest {
         //then
         assertEquals("Adam, Iza i Robert, witajcie!", result);
     }
+
 
 }
 
