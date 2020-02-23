@@ -70,6 +70,31 @@ class GreetingsTest {
         //then
         assertEquals("Adam, Ewa i Robert witajcie!",  result);
     }
+    @Test
+    void testShouldReturnGreetingForThreeNamesAndUpperCase() {
+        //given
+        String name="Adam,Ewa,ROBERT";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Adam, Ewa witajcie! WITAJ ROBERT",  result);
+    }
+
+    @Test
+    void testShouldReturnGreetingForNumbers() {
+        //given
+        String name="Adam5";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Z liczbami się nie witam!",  result);
+    }
 
 
 }
