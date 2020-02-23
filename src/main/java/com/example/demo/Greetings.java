@@ -1,9 +1,15 @@
 package com.example.demo;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 public class Greetings {
 
-    public String greet(String name) {
+    public String greet(String name){
         if (name != null) {
+            if(containsNumber(name)){
+                return "Z liczbami się nie witam.";
+            }
             if(name.equals(name.toUpperCase())){
                 return "WITAJ, " + name.toUpperCase() + "!";
             }
@@ -24,5 +30,12 @@ public class Greetings {
         } else {
             return "Witaj, mój przyjacielu";
         }
+    }
+
+    public static boolean containsNumber(String name){
+        Pattern pattern = Pattern.compile("[0-9]");
+        Matcher matcher = pattern.matcher(name);
+
+        return matcher.find();
     }
 }

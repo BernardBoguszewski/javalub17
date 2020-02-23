@@ -83,4 +83,31 @@ class GreetingsTest {
         //then
         assertEquals("Adam i Iza, witajcie! WITAJ ROBERT!", result);
     }
+
+    @Test
+    void testShouldReturnResponseForNumbers(){
+        //given
+        String name = "123";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Z liczbami się nie witam.", result);
+    }
+
+    @Test
+    void testShouldReturnResponseForNameWithNumber(){
+        //given
+        String name = "Adam1";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Z liczbami się nie witam.", result);
+    }
+
 }
