@@ -20,7 +20,7 @@ class GreetingsTest {
     }
 
     @Test
-    void testGreetingWhenNameIsNull(){
+    void testShouldReturnWhenNameIsNull(){
 
         //given
         Greetings greetings = new Greetings();
@@ -29,6 +29,6 @@ class GreetingsTest {
         String result = greetings.greet(null);
 
         //then
-        assertEquals("Witaj, mój przyjacielu.", result);
+        assertEquals("Witaj, mój przyjacielu", result);
     }
 }
