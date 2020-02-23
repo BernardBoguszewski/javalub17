@@ -1,7 +1,6 @@
 package com.example.demo;
 
 
-import org.junit.Assert;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
@@ -78,6 +77,7 @@ public class GreetingsTest {
         assertEquals("Witek, Adam i Maciek, witajcie!", result);
 
     }
+
     @Test
     public void testShouldReturnGreetingforMoreThanTwoNamesWithWitekToUpperCase() {
         //given
@@ -91,6 +91,7 @@ public class GreetingsTest {
         assertEquals("Adam i Maciek, witajcie! WITAJ, WITEK", result);
 
     }
+
     @Test
     public void testShouldReturnGreetingforMoreThanTwoNamesWithMaciekToUpperCase() {
         //given
@@ -116,6 +117,20 @@ public class GreetingsTest {
 
         //then
         assertEquals("Maciek i Witek, witajcie! WITAJ, ADAM", result);
+
+    }
+
+    @Test
+    public void testShouldReturnGreetingforNumber() {
+        //given
+        String name = "123";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Z liczbami się nie witam.", result);
 
     }
 

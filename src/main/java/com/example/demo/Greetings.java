@@ -1,7 +1,8 @@
 package com.example.demo;
 
+import org.apache.commons.lang3.StringUtils;
+
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 
@@ -14,6 +15,9 @@ public class Greetings {
 
     public String greet(String name) {
         if (name != null) {
+            if (StringUtils.isNumeric(name)) {
+                return "Z liczbami się nie witam.";
+            }
 
             names = splitingNames(name);
             if (isExistAllBigChars(names)) {
@@ -59,7 +63,7 @@ public class Greetings {
     private List<String> splitingNames(String name) {
         String[] split = name.split(",");
         List<String> tmp = new ArrayList<>();
-        for(int i=0;i<split.length;i++){
+        for (int i = 0; i < split.length; i++) {
             tmp.add(split[i]);
         }
         return tmp;
