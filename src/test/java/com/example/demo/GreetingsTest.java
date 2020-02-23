@@ -91,4 +91,19 @@ class GreetingsTest {
         assertEquals("Adam i Iza, witajcie! WITAJ ROBERT!", result);
 
     }
+
+
+    @Test
+    void testShouldReturnGreetingForStringWhichContainsDigits() {
+        //given
+        String name = "Adam, Iza, ROBERT23";
+        Greetings greetings = new Greetings();
+
+        //when
+        String result = greetings.greet(name);
+
+        //then
+        assertEquals("Z liczbami sie nie witam", result);
+
+    }
 }

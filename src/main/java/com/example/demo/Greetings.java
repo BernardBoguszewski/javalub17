@@ -7,7 +7,16 @@ public class Greetings {
 
         if (name == null) {
             return "Witaj, mój przyjacielu";
-        } else if (name.equals(name.toUpperCase())) {
+
+
+        }
+        else if(name.matches(".*\\d.*")){
+            return "Z liczbami sie nie witam";
+        }
+
+        else if
+
+        (name.equals(name.toUpperCase())) {
             return "WITAJ, " + name;
         } else if (name.contains(",")) {
 
@@ -41,6 +50,8 @@ public class Greetings {
 
                 return tab[0] + ", " + tab[1] + " i " + tab[2];
             }
+
+
         }
 
 
@@ -52,15 +63,11 @@ public class Greetings {
                 && !tab[1].equals(tab[1].toUpperCase())
                 && !tab[2].equals(tab[2].toUpperCase())) {
             return tab[1] + " i " + tab[2] + ", witajcie! WITAJ " + tab[0] + "!";
-        }
-
-        else if (!tab[0].equals(tab[0].toUpperCase())
+        } else if (!tab[0].equals(tab[0].toUpperCase())
                 && tab[1].equals(tab[1].toUpperCase())
                 && !tab[2].equals(tab[2].toUpperCase())) {
             return tab[0] + " i " + tab[2] + ", witajcie! WITAJ " + tab[1] + "!";
-        }
-
-        else if (!tab[0].equals(tab[0].toUpperCase())
+        } else if (!tab[0].equals(tab[0].toUpperCase())
                 && !tab[1].equals(tab[1].toUpperCase())
                 && tab[2].equals(tab[2].toUpperCase())) {
             return tab[0] + " i " + tab[1] + ", witajcie! WITAJ " + tab[2] + "!";
@@ -68,5 +75,4 @@ public class Greetings {
 
         return "";
     }
-
 }
