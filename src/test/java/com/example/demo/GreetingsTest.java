@@ -64,16 +64,16 @@ class GreetingsTest {
     }
 
     @Test
-    void testShouldReturn() {
+    void testShouldReturnThreNames() {
         //given
-        String name = "Adam, Iza";
+        String name = "Adam, Iza, Robert";
         Greetings greetings = new Greetings();
 
         //when
         String result = greetings.greet(name);
 
         //then
-        assertEquals("Adam i Iza, witajcie!", result);
+        assertEquals("Adam, Iza i Robert, witajcie!", result);
     }
 
 }
