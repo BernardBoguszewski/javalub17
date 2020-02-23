@@ -101,7 +101,7 @@ class GreetingsTest {
     }
 
     @Test
-    void testShouldNoGreetingWhenNameContainNumber(){
+    void testShouldNoGreetingWhenNameContainNumber() {
         //giver
         String name = "Adam,2,Robert";
         Greetings greetings = new Greetings();
